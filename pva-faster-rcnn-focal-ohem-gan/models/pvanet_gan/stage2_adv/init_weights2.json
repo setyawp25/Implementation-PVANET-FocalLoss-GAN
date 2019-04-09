@@ -1,0 +1,20 @@
+[
+  {
+    "prototxt"  : "models/pvanet_gan_focal/stage1_pretrained_adv/train.prototxt",
+    "model"     : "output/pvanet_gan_focal/voc_2007_trainval/pvanet_stage1_pretrain_iter_50000.caffemodel",
+    "copy_ops"  : {
+      "source"  : ["conv6_mask", "conv7_mask", "conv8_mask", "conv9_mask", "conv10_mask"],
+      "dest"    : ["conv6_mask", "conv7_mask", "conv8_mask", "conv9_mask", "conv10_mask"],
+      "reshape" : [0, 0, 0, 0, 0]
+    }
+  },
+  {
+    "prototxt"  : "models/pvanet_gan_focal/stage0_standard/test.prototxt",
+    "model"     : "output/pvanet_gan_focal/voc_2007_trainval/pvanet_stage0_std_iter_50000.caffemodel",
+    "copy_ops"  : {
+      "source"  : ["conv1_1", "conv1_2", "conv2_1", "conv2_2", "conv3_1", "conv3_2", "conv3_3", "conv4_1", "conv4_2", "conv4_3", "conv5_1", "conv5_2", "conv5_3", "fc6", "fc7", "cls_score"],
+      "dest"    : ["conv1_1", "conv1_2", "conv2_1", "conv2_2", "conv3_1", "conv3_2", "conv3_3", "conv4_1", "conv4_2", "conv4_3", "conv5_1", "conv5_2", "conv5_3", "fc6", "fc7", "cls_score"],
+      "reshape" : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
+  }
+]
